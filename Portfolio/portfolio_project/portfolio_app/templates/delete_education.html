@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Education</title>
+</head>
+<body>
+    <h1>Delete Education</h1>
+    <form action="{% url 'delete_education' %}" method="post">
+        {% csrf_token %}
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" required>
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

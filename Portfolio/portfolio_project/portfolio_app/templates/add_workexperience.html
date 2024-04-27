@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Work Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #007bff; /* Blue title color */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White form background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333; /* Dark label color */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding and border in width */
+            font-size: 14px; /* Font size */
+        }
+
+        select {
+            appearance: none; /* Remove default select arrow */
+            background-color: #fff; /* White background */
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000" width="18px" height="18px"%3E%3Cpath d="M7 10l5 5 5-5z" /%3E%3C/svg%3E'); /* Custom arrow icon */
+            background-repeat: no-repeat; /* No repeat for background image */
+            background-position: right 10px top 50%; /* Position of arrow icon */
+            background-size: 18px; /* Size of arrow icon */
+            padding-right: 25px; /* Space for arrow icon */
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue button background */
+            color: #fff; /* White button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Work Experience</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <button onclick="window.location.href='{% url 'index' %}'">Go back</button>
+    
+    
+    
+</body>
+</html>

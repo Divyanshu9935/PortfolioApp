@@ -1,0 +1,174 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="center-content">
+    <h1 style="color: rgb(82, 147, 215);">Welcome to My Portfolio</h1>
+    <br>
+
+    <h1 style="color: rgb(82, 147, 215);">Profile</h1>
+       <img src="{% static 'images/Me.jpg' %}" alt="Portfolio Image" style="width: 150px; height: 150px; border-radius: 20%; margin-left: 550px; ">
+    
+    <p style="margin-top: -150px;">To obtain a good position in industry, where I can apply my skills,<br>
+      learn and grow with the company, and contribute to its success.</p>
+    <p>Strong creative skills to build Responsive Designs.</p>
+    <p>Team player with an eye for detail.</p>
+    <p>Ability to work independently and Collaboratively.</p>
+        
+    <br>
+    <br>
+
+
+    <h1 style="color: rgb(82, 147, 215);">Education</h1>
+  <ul>
+    {% for education in educations %}
+    <li style ="list-style: none;">
+      <h2 style="display: inline;  margin-left: -40px;">College : {{ education.institution }}</h2>
+      <p style=" margin-left: -40px; ">Degree : {{ education.degree }}</p>
+      <h3 style="  margin-left: -40px;">Specialization : {{ education.specialization }}</h3>
+      <p style="  margin-left: -40px;">Start Year : {{ education.start_year }}</p>
+      <p style=" margin-left: -40px;">End Year : {{ education.end_year }}</p>
+    </li>
+    <br>
+    {% endfor %}
+  </ul>
+  <br>
+  <br>
+
+
+  <h1 style="color: rgb(82, 147, 215);">Skills</h1>
+  <ul>
+    {% for skill in skills %}
+    <li style ="list-style: none;">
+      <h3 style="display: inline;  margin-left: -40px;">{{ skill.title }}</h3>
+      <i style="display: inline; font-weight: 100;font-size: 14px; margin-left: 15px; ">{{ skill.skills }}</i>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+  <br>
+
+  <h1 style="color: rgb(82, 147, 215);">Projects</h1>
+  <p style = "font-size: 1.2rem;">Online Shopping System</p>
+  <p style = "font-size: 1.2rem;">Hotel Management System</p>
+  <p style = "font-size: 1.2rem;">ID card detection system</p>
+  <p style = "font-size: 1.2rem;">Expressive Gesture Interfaces for deaf people</p>
+  <p style = "font-size: 1.2rem;">Full Stack Blogging Website</p>
+  <br>
+  <br>
+
+  <h1 style="color: rgb(82, 147, 215);">Work Experience</h1>
+  <ul>
+    {% for experience in experiences %}
+    <li style="list-style: none; margin-left: -35px;">
+      <h3>{{ experience.companyname }}</h3>
+      <p style = "font-weight: 100;">Position: {{ experience.position }}</p>
+      <p style = "font-weight: 100;">Start Date: {{ experience.start_date }}</p>
+      <p style = "font-weight: 100;">End Date: {{ experience.end_date }}</p>
+      <p style = "font-weight: 100;">Current: {{ experience.current }}</p>
+      <p style = "font-weight: 100;">Description: {{ experience.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+  <br>
+
+  <h1 style="color: rgb(82, 147, 215);">Research Publications</h1>
+  <p>ID CARD DETECTION SYSTEM USING ARTIFICIAL INTELLIGENCE</p>
+  <i>24th March 2023</i>
+<br>
+<br>
+  <p>EXPRESSIVE GESTURE INTERFACES FOR DEAF PEOPLE</p>
+  <i>3rd March 2024</i>
+  <br>
+  <br>
+  <br>
+
+  <h1 style="color: rgb(82, 147, 215);">Certificates/Achievements</h1>
+  {% for achievement in achievements %}
+  <div class="achievement">
+    <h2>{{ achievement.title }}</h2>
+    <p>{{ achievement.description }}</p>
+    <img src="{{ achievement.image.url }}" alt="{{ achievement.title }}" />
+  </div>
+  <br>
+  {% endfor %}
+  <br>
+  <br>
+
+  <div class="resume">
+    <h1 style="color: rgb(82, 147, 215);">Resume List</h1>
+    <ul>
+      {% for resume in resumes %}
+      <li style=" list-style:none; margin-left: -39px;">
+        <h3 style="display: inline; ">{{ resume.title }}</h3>
+        <a style="color:blue;  display: inline; font-size: 15px; margin-left: 15px;" href="{{ resume.file.url }}"><i>Download</i></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <br>
+  <br>
+  <footer>
+    <p>© 2024 by Divyanshu Singh |  <a href="mailto:divyanshusingh99350@gmail.com">divyanshusingh99350@gmail.com</a></p>
+
+    <ul class="socials">
+      <li>
+        <a  href="https://youtube.com/@divyanshusinghrajput3159" target="_blank"><img class="tilt" src="{% static 'images/icon-logo-youtube.png' %}" alt="My YouTube channel"></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/rajput__divyanshu" target="_blank"><img class="tilt" src="{% static 'images/icon-logo-instagram.png' %}" alt="My Instagram"></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/divyanshu-singh-232850196" target="_blank"><img class="tilt" src="{% static 'images/icon-logo-linkedin.png' %}" alt="My LinkedIn profile"></a>
+      </li>
+      <li>
+        <a  href="https://github.com/Divyanshu9935" target="_blank"><img class="tilt" src="{% static 'images/GitHub-logo.png' %}" alt="My GitHub account"></a>
+      </li>
+      <li>
+        <a href="https://x.com/DIVYANSHU99350" target="_blank"><img class="tilt" src="{% static 'images/icon-logo-twitter.png' %}" alt="My Twitter profile"></a>
+      </li>
+    </ul>
+  </footer>
+  
+
+<style>
+/* ____________________footer__________________________  */
+footer {
+  background: #222;
+  color: #D3D4D6;
+  display:flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.socials {
+  list-style-type: none;
+  padding: 0;
+}
+.socials li {
+  display: inline-block;
+  margin-left: 10px;
+} 
+.socials img {
+  height: 30px;
+  width: 30px;   
+}
+.tilt{
+  transition: transform 0.1s; 
+}
+
+.tilt:hover{
+  transform: rotate(20deg) scale(1.1);
+}
+
+.achievement img {
+  width:800px;
+  height: 400px;
+}
+</style>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="achievement-container">
+      <button class="menu-button" onclick="toggleMenu()">Menu</button>
+      <nav>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>
+            <a href="{% url 'add_qualifications' %}">Add Qualifications</a>
+          </li>
+          <li>
+            <a href="{% url 'delete_achievement' %}">Delete Qualifications</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content">
+      {% block content %}
+      <!-- Content of individual pages will be inserted here -->
+      {% endblock %}
+    </div>
+
+    <script>
+      function toggleMenu() {
+        var nav = document.querySelector(".achievement-container nav ul");
+        var button = document.querySelector(".menu-button");
+        var content = document.querySelector(".content");
+
+        if (nav.style.display === "block") {
+          nav.style.display = "none";
+          button.style.backgroundColor = ""; /* Reset button background color */
+          achievementContainer.style.marginTop = "0"; /* Reset margin */
+        } else {
+          nav.style.display = "block";
+          button.style.backgroundColor =
+            "#ccc"; /* Change button background color */
+          content.style.marginTop = "180px"; /* Adjust margin */
+        }
+      }
+    </script>
+  </body>
+</html>

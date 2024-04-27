@@ -1,0 +1,20 @@
+<!-- delete_skill_by_title.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Skill by Title</title>
+</head>
+<body>
+    <h1>Delete Skill by Title</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Skill Title:</label>
+        <input type="text" id="title" name="title" required>
+        <button type="submit">Delete</button>
+    </form>
+    <button onclick="window.location.href='{% url 'index' %}'">Go back</button>
+</body>
+</html>

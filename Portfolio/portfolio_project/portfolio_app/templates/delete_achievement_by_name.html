@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Achievement</title>
+</head>
+<body>
+    <h1>Delete Achievement</h1>
+    <form method="post" action="{% url 'delete_achievement_by_name' %}">
+        {% csrf_token %}
+        <label for="achievement_title">Achievement Title:</label>
+        <input type="text" id="achievement_title" name="achievement_title" required>
+        <button type="submit">Delete</button>
+        <a href="{% url 'index' %}">Cancel</a>
+    </form>
+    <button onclick="window.location.href='{% url 'index' %}'">Go back</button>
+</body>
+</html>
